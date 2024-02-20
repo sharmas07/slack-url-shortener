@@ -1,0 +1,18 @@
+{
+  "name": "slack-hello-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src",
+  "scripts": {
+    "start": "node --env-file=.env ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.17.1",
+    "@slack/rtm-api": "^6.2.1",
+    "@slack/web-api": "^7.0.2",
+    "valid-url": "^1.0.9"
+  }
+}
