@@ -31,8 +31,11 @@ rtm.on('ready', async () => {
 rtm.on('slack_event', async (eventType, event) => {
     if (event && event.type === 'message') {
         if (event.text.startsWith('!short')) {
+
             const matches = event.text.match(/<(.*?)\|.*?>/);
-            const url = matches ? matches[1] : event.text.replace('!short', '').trim();
+            let url = matches ? matches[1] : event.text.replace('!short', '').trim();
+            url = url.replace(/[<>]/g, '');
+            console.log("\n\n\n\n\t\t\t\t",url, "\n\n\n\n\t\t\t\t");
             if (isValidURL(url)) {
                 shortURL(event.channel, url);
             } else {
