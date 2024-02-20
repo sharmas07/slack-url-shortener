@@ -1,9 +1,9 @@
 const { RTMClient } = require('@slack/rtm-api');
 const { WebClient } = require('@slack/web-api');
 const connectDB = require('./utils/connectDB');
-const { isValidURL } = require('./utils/isValidUrl');
 const startExpressServer = require('./server/server');
 const { shorten } = require('./controllers/urlController');
+const {isValidURL} = require('./utils/isValidURL');
 
 const rtm = new RTMClient(process.env.BOT_USER_OAUTH_TOKEN);
 const web = new WebClient(process.env.BOT_USER_OAUTH_TOKEN);
